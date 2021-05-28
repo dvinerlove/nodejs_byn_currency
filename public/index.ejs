@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Курсы валют</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="container">
+
+<h1>Курсы валют</h1>
+<main>
+    <div>
+      <table class="table table-condensed table-striped table-bordered">
+        <tr>
+          <th><h4 style="font-weight: bold;">Валюта</h4></th><th><h4 style="font-weight: bold;">Курс НБРБ</h4></th>
+        </tr>
+        <% json.forEach(function(data) { %>
+               <tr>
+                   <td > <span style="font-weight: bold;" ><%= data.Cur_Scale %>  <%= data.Cur_Abbreviation %> </span>(<%= data.Cur_Name %>)</td>
+                   <td> <%= data.Cur_OfficialRate  %> </td>
+
+               </tr>
+           <% }); %>
+
+
+      </table>
+    </div>
+</main>
+
+
+</body>
+</html>
